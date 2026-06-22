@@ -1,0 +1,113 @@
+/* assets/css/dashboard.css */
+/* Hero Banner chuẩn web gốc */
+.hero-banner {
+    width: 100%;
+    height: 450px;
+    background-image: url('../images/banner-tournoi.avif'); 
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+}
+
+/* Khối hộp trắng trôi nổi ở góc trái dưới banner */
+.hero-floating-box {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    background: white;
+    padding: 15px 25px;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--text-dark);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Tiêu đề mục (Dernières actualités / Compétitions) */
+.section-header {
+    font-size: 42px; /* Font siêu to, ép dẹp giống web gốc */
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Lưới hiển thị Card phẳng */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+}
+
+.epreuve-card {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid var(--border-soft);
+    border-radius: 4px; /* Góc bo rất nhẹ, trông cứng cáp hơn */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.epreuve-card:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+}
+
+.epreuve-card h3 {
+    color: var(--text-dark);
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.epreuve-badge {
+    color: var(--text-gray);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Thiết kế Nút bấm chuyên nghiệp */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.btn {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px; /* Rất ít bo góc */
+}
+
+/* Nút chính Gradient giống web gốc */
+.btn-primary {
+    background: var(--fftt-blue-gradient);
+    color: #ffffff;
+    flex: 2;
+}
+.btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 5px 15px rgba(0, 85, 255, 0.3);
+}
+
+/* Nút phụ dạng viền mỏng (Outline) */
+.btn-outline {
+    background: transparent;
+    color: var(--text-dark);
+    border: 1px solid #ccc;
+    flex: 1;
+}
+.btn-outline:hover {
+    border-color: var(--text-dark);
+    background: #f8f8f8;
+}

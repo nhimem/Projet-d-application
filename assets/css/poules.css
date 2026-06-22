@@ -1,0 +1,101 @@
+/* assets/css/poules.css - GIAO DIỆN WEB HIỆN ĐẠI */
+
+/* Khối bao bọc các bảng đấu (Card) */
+.poule-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 40px;
+    border-top: 4px solid var(--fftt-navy);
+}
+
+.poule-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--fftt-navy);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-soft);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Bảng dữ liệu hiện đại (Web Table) */
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.web-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px var(--border-soft); /* Viền mỏng bao ngoài bảng */
+}
+
+.web-table th {
+    background-color: #f8f9fa;
+    color: var(--fftt-navy);
+    font-weight: 700;
+    padding: 14px 15px;
+    text-align: center;
+    border-bottom: 2px solid #dde1e6;
+    text-transform: uppercase;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.web-table td {
+    padding: 14px 15px;
+    border-bottom: 1px solid var(--border-soft);
+    text-align: center;
+    color: var(--text-dark);
+    vertical-align: middle;
+}
+
+.web-table tbody tr:hover {
+    background-color: #f4f7fe; /* Đổi màu nền xanh nhạt khi di chuột vào dòng */
+}
+
+.web-table td.left-align {
+    text-align: left;
+}
+
+/* Các nhãn (Badge) làm nổi bật dữ liệu */
+.badge-forfait {
+    background-color: #ffebe9;
+    color: #d73a49;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge-score {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.badge-total {
+    background-color: var(--fftt-navy);
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+.empty-slot {
+    color: #adb5bd;
+    font-style: italic;
+    font-size: 12px;
+}

@@ -1,0 +1,98 @@
+/* assets/css/global.css */
+:root {
+    --fftt-navy: #132968;    /* Màu xanh đen tối hơn, sang hơn */
+    --fftt-blue: #0044cc;    /* Xanh dương đậm */
+    --fftt-blue-gradient: linear-gradient(90deg, #0055ff 0%, #08288e 100%); /* Màu gradient của nút bấm web gốc */
+    --bg-light: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-gray: #666666;
+    --border-soft: #eaeaea;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font chuẩn của web tin tức */
+    background-color: #f8f9fa; /* Nền web hơi xám nhẹ để làm nổi bật thẻ trắng */
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Thanh Top Bar (Phần xám nhạt trên cùng) */
+.top-bar {
+    background-color: #f3f3f8;
+    padding: 8px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--fftt-navy);
+}
+.top-bar-left span { margin-right: 20px; cursor: pointer; }
+.top-bar-left span:hover { color: var(--fftt-blue); }
+.top-bar-right { background: var(--fftt-navy); color: white; padding: 8px 15px; border-radius: 4px; }
+
+/* Thanh Menu Chính */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-soft); /* Viền mỏng thanh lịch */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar-brand img { height: 50px; display: block; }
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.navbar-menu a {
+    text-decoration: none; color: inherit; display: flex; align-items: center; gap: 5px;
+}
+.navbar-menu a:hover { color: var(--fftt-blue); }
+
+.container { max-width: 1300px; margin: 0 auto; padding: 40px 20px; }
+/* Tiêu đề mục dùng chung toàn hệ thống */
+.section-header {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+/* ======================================================== */
+/* ALERTE DE DÉCONNEXION RÉSEAU (TOAST NOTIFICATION)        */
+/* ======================================================== */
+#network-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ef4444; /* Đỏ cảnh báo */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10000;
+    /* Ép tàng hình và đẩy xuống đáy dưới màn hình */
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#network-toast.show {
+    /* Trượt lên và hiện rõ khi có lỗi mạng */
+    transform: translateY(0);
+    opacity: 1;
+}
