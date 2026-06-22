@@ -1,0 +1,26 @@
+# =========================================================================
+# 1. SÉCURITÉ : RESTRICTION D'ACCÈS AU RÉSEAU INTERNE DE L'INSA
+# =========================================================================
+<RequireAny>
+    # Autorise l'accès depuis le serveur local (localhost)
+    Require local
+    
+    # Autorise les plages d'IP internes (Le réseau de l'INSA commence par 10)
+    	Require ip 10
+	Require ip 192.168
+</RequireAny>
+
+# =========================================================================
+# 2. RÉÉCRITURE D'URL (MASQUAGE DE INDEX ET DE L'EXTENSION .PHP)
+# =========================================================================
+RewriteEngine On
+RewriteBase /Project/
+
+# Masque le fichier index.php dans l'URL (Redirection permanente 301)
+RewriteCond %{THE_REQUEST} /index\.php [NC]
+RewriteRule ^(.*)index\.php$ /Project/$1 [R=301,L]
+
+# Masque l'extension .php pour les autres pages
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
